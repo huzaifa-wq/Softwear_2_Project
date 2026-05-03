@@ -1,0 +1,231 @@
+body {
+  margin: 30px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ✅ Background image layer with opacity */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('images/background3.jpg') center/cover no-repeat;
+  opacity: 0.15; /* ✅ kam opacity (0.5 = 50%) */
+  z-index: -1;  /* ✅ behind all content */
+}
+
+
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+#start_button {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#start_button:hover {
+  background: #005a9e;
+  transform: translateY(-2px);
+}
+
+
+#playerName {
+  width: 20%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#playerName:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 6px rgba(0,120,215,0.4);
+}
+
+
+  /* contracts butoons */
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+
+#status, #contracts {
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border-radius: 5px;
+  width: 80%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+#greeting {
+  font-weight: bold;
+  font-size: 20px;
+  color: #45a049;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+#greeting.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ✅ Parent container for contracts + delivery */
+.contracts-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px; /* space between boxes */
+}
+
+/* ✅ Contracts box styling */
+.contracts-box {
+  flex: 1;
+}
+
+/* ✅ Delivery box styling */
+.delivery-box {
+  border: none;
+  background: linear-gradient(135deg, #e8f5e9, #d0f0d0);
+  padding: 90px;
+  width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2e7d32;
+  transition: transform 0.2s ease-in-out;
+}
+
+
+
+
+.progress {
+  width: 80%;
+  background: #ddd;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+.progress-fill {
+  height: 30px;
+  background: #4CAF50;
+  border-radius: 5px;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+
+
+/* Refuel Box Styling */
+#refuel-box, #refuel-result {
+  border: none;
+  background: linear-gradient(135deg, #f0f4ff, #e6ecff);
+  padding: 20px;
+  width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-top: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+#refuel-box:hover, #refuel-result:hover {
+  transform: scale(1.02);
+}
+
+#refuel-box h3 {
+  margin-top: 0;
+  color: #2a3d66;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#fuel-price {
+  margin: 10px 0;
+  font-weight: bold;
+  color: #1a237e;
+  text-align: center;
+  font-size: 16px;
+}
+
+#refuel-amount {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#refuel-amount:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 6px rgba(0,120,215,0.4);
+}
+
+#refuel-box button {
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#refuel-box button:hover {
+  background: #005a9e;
+  transform: translateY(-2px);
+}
+
+
+#map {
+  height: 400px;
+  width: 100%;
+  margin-top: 20px;
+  border: 2px solid #2e7d32; /* green border to match theme */
+  border-radius: 8px;
+}
+
+

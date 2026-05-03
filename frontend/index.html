@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cargo Delivery Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Cargo Delivery Game</h1>
+  <h2>By Innovators</h2>
+  <label for="playerName"></label>
+<input type="text" id="playerName" placeholder="Enter your name">
+<button onclick="startGame()" id="start_button">Start Game</button>
+
+<!-- Status area -->
+<div id="greeting"></div>
+<div id="status"></div>
+
+  <div id="bars">
+    <div>
+      <label>Fuel</label>
+      <div class="progress"><div id="fuelBar" class="progress-fill"></div></div>
+    </div>
+    <div>
+      <label>Money</label>
+      <div class="progress"><div id="moneyBar" class="progress-fill"></div></div>
+    </div>
+    <div>
+      <label>Turns</label>
+      <div class="progress"><div id="turnsBar" class="progress-fill"></div></div>
+    </div>
+  </div>
+
+<div class="contracts-section">
+  <div id="contracts" class="contracts-box"></div>
+  <div id="delivery-result" class="delivery-box"></div>
+</div>
+
+
+
+  <!-- ✅ Refuel Box -->
+<div class="refuel-box" id="refuel-box">
+  <h3>Refuel</h3>
+  <div id="fuel-price">Fuel price: -- €/unit</div>
+  <label for="refuel-amount"></label>
+  <input type="number" id="refuel-amount" placeholder="Enter units">
+  <button onclick="doRefuel()">Refuel</button>
+</div>
+
+<!-- ✅ Result box styled same as refuel box -->
+<div class="refuel-box" id="refuel-result"></div>
+
+
+  <!-- Map Section -->
+<div id="map"></div>
+
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

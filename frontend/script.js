@@ -1,5 +1,5 @@
 let playerId = null;
-let currentContracts = []; // ✅ global storage for contracts
+let currentContracts = []; //  global storage for contracts
 
 async function startGame() {
   let playerName = document.getElementById('playerName').value;
@@ -17,7 +17,7 @@ async function startGame() {
   let data = await res.json();
   playerId = data.player_id;
 
-  // ✅ Greeting message
+  //  Greeting message
   document.getElementById('greeting').innerHTML =
     "Welcome aboard Captain " + data.player_name + " !";
   document.getElementById('greeting').classList.add("show");

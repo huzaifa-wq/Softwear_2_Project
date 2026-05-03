@@ -205,7 +205,7 @@ def get_contracts(player_id):
         latitude = airport[2]
         longitude = airport[3]
 
-        # ✅ keep float distance for accurate calculation
+        #  keep float distance for accurate calculation
         distance = geodesic(
             (current_coordinates[0], current_coordinates[1]),
             (latitude, longitude)
@@ -243,7 +243,7 @@ def get_contracts(player_id):
             "from": current_airport_ident,
             "destination": airport["destination"],
             "destination_name": airport["destination_name"],
-            "distance": round(airport["distance"]),   # ✅ show rounded km
+            "distance": round(airport["distance"]),
             "fuel_needed": fuel_needed,
             "reward": reward
         })
@@ -270,7 +270,7 @@ def refuel_player(game_id, player_id, fuel_amount):
     if fuel + fuel_amount > MAX_FUEL:
         return f"You cannot exceed the maximum fuel capacity of {MAX_FUEL}. You can only buy {MAX_FUEL - fuel} more fuel."
 
-    # ✅ Use get_fuel_price() from game_service
+    #  Use get_fuel_price() from game_service
     fuel_price = get_fuel_price(current_airport_ident)
     total_cost = fuel_amount * fuel_price
 
@@ -292,7 +292,7 @@ def refuel_player(game_id, player_id, fuel_amount):
 
     log_action(game_id, player_id, "REFUEL", fuel_bought=fuel_amount, fuel_price=fuel_price)
 
-    # ✅ Message includes fuel price
+    #  Message includes fuel price
     return f"Refueled {fuel_amount} units at {fuel_price:.2f} €/unit. Cost: {total_cost:.2f}€."
 
 
@@ -427,8 +427,8 @@ def update_player_after_contract(game_id, player_id, contract):
     connection.close()
 
     if current_money >= TARGET_MONEY:
-        return f"🎉 Congratulations! You reached {current_money}€ and won the game!"
-    elif turns_left <= 0:  # ✅ lose only when zero
+        return f" Congratulations! You reached {current_money}€ and won the game!"
+    elif turns_left <= 0:  #  lose only when zero
         return "Game Over!\nYour turns are run out\nYou lose the game!"
 
     else:
